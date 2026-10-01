@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanguard Readiness LLC | AI Governance, Risk & Compliance Consulting (Colorado & NIST AI RMF)</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#1e293b',
+                            900: '#0f172a',
+                            950: '#020617'
+                        },
+                        royal: {
+                            600: '#2563eb',
+                            700: '#1d4ed8'
+                        },
+                        teal: {
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            50: '#f0fdfa'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for professional icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0d9488 100%);
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-800 font-sans antialiased selection:bg-teal-600 selection:text-white">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-navy-900 text-slate-200 text-xs sm:text-sm py-2 px-4 text-center font-medium">
+        <span class="bg-teal-600 text-white text-xs px-2 py-0.5 rounded-full font-semibold mr-2 uppercase tracking-wide">Colorado ADMT</span> 
+        Preparing organizations for 2027 automated decision-making requirements. <a href="#colorado-admt" class="underline hover:text-teal-400 font-semibold ml-1">Learn More &rarr;</a>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="h-10 w-10 rounded-lg bg-navy-900 flex items-center justify-center text-teal-400 font-bold text-xl shadow-md">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-bold tracking-tight text-navy-900 block leading-tight">VANGUARD</span>
+                        <span class="text-xs font-semibold tracking-wider text-teal-700 uppercase">Readiness LLC</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden xl:flex items-center space-x-6 text-sm font-medium text-slate-700">
+                    <a href="#home" class="hover:text-royal-600 transition">Home</a>
+                    <a href="#services" class="hover:text-royal-600 transition">Services</a>
+                    <a href="#colorado-admt" class="hover:text-royal-600 transition">Colorado ADMT</a>
+                    <a href="#nist-framework" class="hover:text-royal-600 transition">NIST AI Governance</a>
+                    <a href="#energy-infrastructure" class="hover:text-royal-600 transition">Energy & Infrastructure</a>
+                    <a href="#about" class="hover:text-royal-600 transition">About</a>
+                    <a href="#resources" class="hover:text-royal-600 transition">Resources</a>
+                    <a href="#contact" class="hover:text-royal-600 transition">Contact</a>
+                </nav>
+
+                <!-- Action Buttons -->
+                <div class="hidden md:flex items-center space-x-3">
+                    <button onclick="openModal('readinessModal')" class="text-xs lg:text-sm font-semibold text-royal-600 bg-blue-50 hover:bg-blue-100 px-4 py-2.5 rounded-lg transition border border-blue-200">
+                        Readiness Check
+                    </button>
+                    <button onclick="openModal('callModal')" class="text-xs lg:text-sm font-semibold text-white bg-teal-600 hover:bg-teal-700 px-4 py-2.5 rounded-lg shadow-sm transition">
+                        Schedule Call
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="xl:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-slate-700 hover:text-slate-900 focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden xl:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3 shadow-lg">
+            <a href="#home" class="block py-2 text-base font-medium text-slate-700 hover:text-royal-600">Home</a>
+            <a href="#services" class="block py-2 text-base font-medium text-slate-700 hover:text-royal-600">Services</a>
+            <a href="#colorado-admt" class="block py-2 text-base font-medium text-slate-700 hover:text-royal-600">Colorado ADMT Readiness</a>
+            <a href="#nist-framework" class="block py-2 text-base font-medium text-slate-700 hover:text-royal-600">NIST AI Governance</a>
+            <a href="#energy-infrastructure" class="block py-2 text-base font-medium text-slate-700 hover:text-royal-600">Energy & Critical Infrastructure</a>
+            <a href="#about" class="block py-2 text-base font-medium text-slate-700 hover:text-royal-600">About</a>
+            <a href="#resources" class="block py-2 text-base font-medium text-slate-700 hover:text-royal-600">Resources</a>
+            <a href="#contact" class="block py-2 text-base font-medium text-slate-700 hover:text-royal-600">Contact</a>
+            <div class="pt-4 flex flex-col space-y-2">
+                <button onclick="openModal('readinessModal')" class="w-full text-center text-sm font-semibold text-royal-600 bg-blue-50 hover:bg-blue-100 py-3 rounded-lg border border-blue-200">
+                    Take the Free AI Readiness Check
+                </button>
+                <button onclick="openModal('callModal')" class="w-full text-center text-sm font-semibold text-white bg-teal-600 hover:bg-teal-700 py-3 rounded-lg shadow-sm">
+                    Schedule a Free 20-Minute Readiness Call
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative hero-gradient text-white py-24 lg:py-32 overflow-hidden">
+        <!-- Background Overlay Image -->
+        <div class="absolute inset-0 opacity-15 mix-blend-overlay bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80');"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center space-x-2 bg-teal-500/20 border border-teal-400/30 px-3 py-1.5 rounded-full text-teal-300 text-xs font-semibold tracking-wider uppercase mb-6">
+                    <i class="fa-solid fa-award"></i>
+                    <span>Colorado & NIST AI Governance Specialists</span>
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-6 text-white">
+                    Build AI Governance Your Leadership Team Can Defend.
+                </h1>
+                <p class="text-lg sm:text-xl text-slate-300 mb-10 leading-relaxed font-normal">
+                    Prepare for Colorado's 2027 automated decision-making requirements while building a practical AI governance program aligned with the NIST AI Risk Management Framework.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <button onclick="openModal('readinessModal')" class="inline-flex justify-center items-center bg-teal-600 hover:bg-teal-500 text-white font-semibold px-8 py-4 rounded-xl shadow-lg transition text-base">
+                        <i class="fa-solid fa-clipboard-check mr-2"></i> Take the Free AI Readiness Check
+                    </button>
+                    <button onclick="openModal('callModal')" class="inline-flex justify-center items-center bg-white/10 hover:bg-white/20 border border-white/30 text-white font-semibold px-8 py-4 rounded-xl backdrop-blur transition text-base">
+                        <i class="fa-solid fa-calendar-days mr-2"></i> Schedule a Free 20-Min Call
+                    </button>
+                </div>
+                
+                <!-- Trust Metrics -->
+                <div class="mt-16 pt-8 border-t border-slate-700/60 grid grid-cols-2 md:grid-cols-3 gap-6 text-slate-300 text-sm">
+                    <div>
+                        <div class="text-2xl font-bold text-white">Colorado ADMT</div>
+                        <div class="text-xs text-slate-400 mt-1">Ready for 2027 compliance mandates</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold text-white">NIST AI RMF</div>
+                        <div class="text-xs text-slate-400 mt-1">Structured framework implementation</div>
+                    </div>
+                    <div class="col-span-2 md:col-span-1">
+                        <div class="text-2xl font-bold text-white">Critical Infrastructure</div>
+                        <div class="text-xs text-slate-400 mt-1">Specialized energy & utility expertise</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology Section -->
+    <section class="py-20 bg-slate-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-teal-700 uppercase tracking-widest mb-3">Our Core Methodology</h2>
+                <h3 class="text-3xl font-bold text-navy-900 tracking-tight">Structured, Defensible AI Risk Management</h3>
+                <p class="text-slate-600 mt-3">A rigorous six-stage lifecycle approach designed for enterprise auditability and regulatory alignment.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
+                <!-- Step 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 relative group hover:border-teal-600 transition">
+                    <span class="text-xs font-bold text-teal-600 block mb-2">01</span>
+                    <h4 class="text-lg font-bold text-navy-900 mb-2">Discover</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed">Map enterprise AI use cases, shadow AI, and automated decision-making systems.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 relative group hover:border-teal-600 transition">
+                    <span class="text-xs font-bold text-teal-600 block mb-2">02</span>
+                    <h4 class="text-lg font-bold text-navy-900 mb-2">Inventory</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed">Build comprehensive AI system cards with metadata, data lineage, and vendors.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 relative group hover:border-teal-600 transition">
+                    <span class="text-xs font-bold text-teal-600 block mb-2">03</span>
+                    <h4 class="text-lg font-bold text-navy-900 mb-2">Assess</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed">Evaluate algorithmic bias, NIST RMF gaps, and Colorado ADMT applicability.</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 relative group hover:border-teal-600 transition">
+                    <span class="text-xs font-bold text-teal-600 block mb-2">04</span>
+                    <h4 class="text-lg font-bold text-navy-900 mb-2">Govern</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed">Implement human oversight policies, risk registers, and accountability structures.</p>
+                </div>
+                <!-- Step 5 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 relative group hover:border-teal-600 transition">
+                    <span class="text-xs font-bold text-teal-600 block mb-2">05</span>
+                    <h4 class="text-lg font-bold text-navy-900 mb-2">Remediate</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed">Execute prioritized action plans to close compliance and security gaps.</p>
+                </div>
+                <!-- Step 6 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 relative group hover:border-teal-600 transition">
+                    <span class="text-xs font-bold text-teal-600 block mb-2">06</span>
+                    <h4 class="text-lg font-bold text-navy-900 mb-2">Monitor</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed">Ongoing surveillance of regulatory changes, model drift, and vendor changes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-teal-700 uppercase tracking-widest mb-3">Consulting Service Packages</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-navy-900 tracking-tight">Tailored AI Governance & Compliance Solutions</h3>
+                <p class="text-slate-600 mt-4 text-base">Whether you are taking your first inventory of AI tools or establishing an enterprise-wide governance program, Vanguard provides rigorous, audit-ready support.</p>
+            </div>
+
+            <!-- 3 Primary Packages -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch mb-12">
+                <!-- Package 1 -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200 flex flex-col justify-between hover:shadow-lg transition">
+                    <div>
+                        <div class="text-xs font-bold text-royal-600 uppercase tracking-wider mb-2">Foundational Assessment</div>
+                        <h4 class="text-2xl font-bold text-navy-900 mb-4">1. AI Readiness Assessment</h4>
+                        <p class="text-slate-600 text-sm mb-6">Designed for organizations seeking an initial evaluation of their AI footprint and regulatory exposure.</p>
+                        <ul class="space-y-3 text-sm text-slate-700 mb-8">
+                            <li class="flex items-start"><i class="fa-solid fa-check text-teal-600 mt-1 mr-2"></i> AI/ADMT discovery and inventory</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-teal-600 mt-1 mr-2"></i> Colorado applicability screening</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-teal-600 mt-1 mr-2"></i> NIST AI RMF gap assessment</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-teal-600 mt-1 mr-2"></i> Enterprise risk identification</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-teal-600 mt-1 mr-2"></i> Comprehensive assessment report</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-teal-600 mt-1 mr-2"></i> Prioritized remediation roadmap</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <button onclick="openModal('proposalModal')" class="w-full bg-navy-900 hover:bg-navy-800 text-white font-semibold py-3 rounded-xl text-sm transition shadow-sm">
+                            Request Proposal
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Package 2 (Featured) -->
+                <div class="bg-navy-900 text-white rounded-2xl p-8 border-2 border-teal-500 flex flex-col justify-between shadow-xl relative transform lg:-translate-y-2">
+                    <div class="absolute -top-3.5 left-1/2 transform -translate-x-1/2 bg-teal-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wide">
+                        Most Popular for Colorado 2027
+                    </div>
+                    <div>
+                        <div class="text-xs font-bold text-teal-400 uppercase tracking-wider mb-2">Comprehensive Readiness</div>
+                        <h4 class="text-2xl font-bold text-white mb-4">2. AI Governance & Colorado Readiness</h4>
+                        <p class="text-slate-300 text-sm mb-6">For organizations deploying high-risk or consequential automated decision-making systems.</p>
+                        <ul class="space-y-3 text-sm text-slate-200 mb-8">
+                            <li class="flex items-start"><i class="fa-solid fa-check text-teal-400 mt-1 mr-2"></i> Everything in AI Readiness Assessment</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-teal-400 mt-1 mr-2"></i> Detailed evidence assessment</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-teal-400 mt-1 mr-2"></i> Vendor AI due diligence</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-teal-400 mt-1 mr-2"></i> Consequential-decision analysis</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-teal-400 mt-1 mr-2"></i> Governance control assessment</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-teal-400 mt-1 mr-2"></i> Risk register & ADMT readiness evaluation</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <button onclick="openModal('proposalModal')" class="w-full bg-teal-600 hover:bg-teal-500 text-white font-semibold py-3 rounded-xl text-sm transition shadow-md">
+                            Request Proposal
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Package 3 -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200 flex flex-col justify-between hover:shadow-lg transition">
+                    <div>
+                        <div class="text-xs font-bold text-royal-600 uppercase tracking-wider mb-2">Enterprise Implementation</div>
+                        <h4 class="text-2xl font-bold text-navy-900 mb-4">3. AI Governance Program</h4>
+                        <p class="text-slate-600 text-sm mb-6">Full institutionalization of policies, oversight, and controls across the enterprise lifecycle.</p>
+                        <ul class="space-y-3 text-sm text-slate-700 mb-8">
+                            <li class="flex items-start"><i class="fa-solid fa-check text-teal-600 mt-1 mr-2"></i> Full governance framework implementation</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-teal-600 mt-1 mr-2"></i> Policies, procedures & role definition</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-teal-600 mt-1 mr-2"></i> Human oversight processes & vendor gov</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-teal-600 mt-1 mr-2"></i> Lifecycle controls & staff training</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-teal-600 mt-1 mr-2"></i> Continuous monitoring & remediation</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-teal-600 mt-1 mr-2"></i> Executive & board management reporting</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <button onclick="openModal('proposalModal')" class="w-full bg-navy-900 hover:bg-navy-800 text-white font-semibold py-3 rounded-xl text-sm transition shadow-sm">
+                            Request Proposal
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recurring Fractional Service -->
+            <div class="bg-gradient-to-r from-teal-50 to-blue-50 rounded-2xl p-8 border border-teal-200 flex flex-col md:flex-row items-center justify-between">
+                <div class="mb-6 md:mb-0 md:pr-8">
+                    <span class="bg-teal-700 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Recurring Retainer</span>
+                    <h4 class="text-2xl font-bold text-navy-900 mt-3 mb-2">Fractional AI Governance Advisor</h4>
+                    <p class="text-slate-700 text-sm max-w-3xl leading-relaxed">
+                        Ongoing governance support, regulatory monitoring, new AI system reviews, vendor reviews, risk register maintenance, governance meetings, documentation updates, and executive management reporting.
+                    </p>
+                </div>
+                <div class="flex-shrink-0">
+                    <button onclick="openModal('callModal')" class="bg-teal-700 hover:bg-teal-800 text-white font-semibold px-6 py-3.5 rounded-xl text-sm transition shadow-sm whitespace-nowrap">
+                        Inquire About Fractional Support
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Colorado ADMT Readiness Section -->
+    <section id="colorado-admt" class="py-24 bg-slate-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=2000&q=80');"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-flex items-center space-x-2 bg-teal-500/20 text-teal-400 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        <span>Mandate Deadline: January 1, 2027</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-6">
+                        Colorado ADMT Readiness — January 1, 2027
+                    </h2>
+                    <p class="text-slate-300 text-base leading-relaxed mb-6">
+                        Colorado has enacted groundbreaking legislation governing automated decision-making technologies (ADMT) involved in consequential decisions impacting consumers (including employment, housing, financial services, healthcare, and education).
+                    </p>
+                    <p class="text-slate-300 text-base leading-relaxed mb-8">
+                        Vanguard Readiness helps organizations identify potentially relevant systems, assess compliance readiness, document robust governance controls, and prepare for applicable statutory requirements before enforcement begins.
+                    </p>
+                    
+                    <div class="bg-slate-800/80 border border-slate-700 p-5 rounded-xl text-xs text-slate-400 leading-normal">
+                        <strong class="text-slate-200 block mb-1">Important Regulatory Disclaimer:</strong>
+                        Regulatory requirements continue to evolve. Vanguard Readiness LLC provides governance, risk management, and compliance-readiness consulting services. We do not provide formal legal advice or legal representation.
+                    </div>
+                </div>
+
+                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 shadow-2xl">
+                    <h3 class="text-xl font-bold text-white mb-6">Key Colorado ADMT Focus Areas</h3>
+                    <ul class="space-y-4 text-sm text-slate-300">
+                        <li class="flex items-start">
+                            <div class="h-6 w-6 rounded-full bg-teal-500/20 text-teal-400 flex items-center justify-center font-bold mr-3 flex-shrink-0 mt-0.5"><i class="fa-solid fa-check text-xs"></i></div>
+                            <div>
+                                <strong class="text-white block">Consequential Decision Mapping</strong>
+                                Identifying algorithms impacting legal or similarly significant effects on consumer rights.
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="h-6 w-6 rounded-full bg-teal-500/20 text-teal-400 flex items-center justify-center font-bold mr-3 flex-shrink-0 mt-0.5"><i class="fa-solid fa-check text-xs"></i></div>
+                            <div>
+                                <strong class="text-white block">Risk Assessments & Impact Evaluations</strong>
+                                Documenting algorithmic bias testing, data provenance, and impact mitigations.
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="h-6 w-6 rounded-full bg-teal-500/20 text-teal-400 flex items-center justify-center font-bold mr-3 flex-shrink-0 mt-0.5"><i class="fa-solid fa-check text-xs"></i></div>
+                            <div>
+                                <strong class="text-white block">Consumer Notice & Opt-Out Protocols</strong>
+                                Establishing workflows for transparent consumer disclosures and human review channels.
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="h-6 w-6 rounded-full bg-teal-500/20 text-teal-400 flex items-center justify-center font-bold mr-3 flex-shrink-0 mt-0.5"><i class="fa-solid fa-check text-xs"></i></div>
+                            <div>
+                                <strong class="text-white block">Vendor & Third-Party Oversight</strong>
+                                Due diligence on procured AI models to ensure downstream compliance readiness.
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="mt-8">
+                        <button onclick="openModal('readinessModal')" class="w-full bg-teal-600 hover:bg-teal-500 text-white font-semibold py-3.5 rounded-xl transition text-sm shadow-sm">
+                            Evaluate Your Colorado ADMT Readiness
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NIST AI Framework Section -->
+    <section id="nist-framework" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-teal-700 uppercase tracking-widest mb-3">Industry Standard Framework</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-navy-900 tracking-tight">NIST AI Risk Management Framework (AI RMF)</h3>
+                <p class="text-slate-600 mt-4 text-base">Vanguard uses the NIST AI RMF as a structured, defensible standard for helping organizations establish responsible, documented, risk-based AI governance.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Govern -->
+                <div class="bg-slate-50 border border-slate-200 p-8 rounded-2xl hover:border-teal-600 transition">
+                    <div class="h-12 w-12 rounded-xl bg-royal-600 text-white flex items-center justify-center text-xl font-bold mb-6 shadow-sm">
+                        G
+                    </div>
+                    <h4 class="text-xl font-bold text-navy-900 mb-3">GOVERN</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Cultivating a culture of risk management. Establishing policies, accountability structures, diverse teams, and legal oversight.
+                    </p>
+                </div>
+
+                <!-- Map -->
+                <div class="bg-slate-50 border border-slate-200 p-8 rounded-2xl hover:border-teal-600 transition">
+                    <div class="h-12 w-12 rounded-xl bg-royal-600 text-white flex items-center justify-center text-xl font-bold mb-6 shadow-sm">
+                        M
+                    </div>
+                    <h4 class="text-xl font-bold text-navy-900 mb-3">MAP</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Contextualizing risk. Identifying AI system characteristics, intended uses, stakeholders, and potential societal impacts.
+                    </p>
+                </div>
+
+                <!-- Measure -->
+                <div class="bg-slate-50 border border-slate-200 p-8 rounded-2xl hover:border-teal-600 transition">
+                    <div class="h-12 w-12 rounded-xl bg-royal-600 text-white flex items-center justify-center text-xl font-bold mb-6 shadow-sm">
+                        M
+                    </div>
+                    <h4 class="text-xl font-bold text-navy-900 mb-3">MEASURE</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Analyzing and tracking risk. Employing qualitative and quantitative tools to assess trustworthiness, bias, and performance.
+                    </p>
+                </div>
+
+                <!-- Manage -->
+                <div class="bg-slate-50 border border-slate-200 p-8 rounded-2xl hover:border-teal-600 transition">
+                    <div class="h-12 w-12 rounded-xl bg-teal-600 text-white flex items-center justify-center text-xl font-bold mb-6 shadow-sm">
+                        M
+                    </div>
+                    <h4 class="text-xl font-bold text-navy-900 mb-3">MANAGE</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Allocating resources and prioritizing risks. Implementing mitigation strategies, incident response, and continuous verification.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Energy & Critical Infrastructure Section -->
+    <section id="energy-infrastructure" class="py-24 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-xs font-bold text-teal-700 uppercase tracking-widest mb-3 block">Specialized Sector Expertise</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-navy-900 tracking-tight mb-6">
+                        AI Governance for Energy & Critical Infrastructure
+                    </h2>
+                    <p class="text-slate-600 text-base leading-relaxed mb-6">
+                        Industrial organizations, pipeline operators, and utilities face unique operational, physical safety, and cyber-physical risks when deploying artificial intelligence.
+                    </p>
+                    <p class="text-slate-600 text-base leading-relaxed mb-6">
+                        Vanguard delivers tailored governance frameworks for operational AI applications that balance technological innovation with stringent reliability, safety, and regulatory mandates.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+                        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                            <i class="fa-solid fa-gauge-high text-teal-600 mb-2 text-lg"></i>
+                            <h4 class="font-bold text-navy-900 text-sm">Predictive Maintenance</h4>
+                            <p class="text-xs text-slate-600 mt-1">Asset health analytics and failure forecasting.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                            <i class="fa-solid fa-droplet text-teal-600 mb-2 text-lg"></i>
+                            <h4 class="font-bold text-navy-900 text-sm">Leak Detection & Integrity</h4>
+                            <p class="text-xs text-slate-600 mt-1">Pipeline analytics and corrosion monitoring.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                            <i class="fa-solid fa-video text-teal-600 mb-2 text-lg"></i>
+                            <h4 class="font-bold text-navy-900 text-sm">Computer Vision & SCADA</h4>
+                            <p class="text-xs text-slate-600 mt-1">Visual safety monitoring and SCADA analytics.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                            <i class="fa-solid fa-bolt text-teal-600 mb-2 text-lg"></i>
+                            <h4 class="font-bold text-navy-900 text-sm">Safety-Critical AI</h4>
+                            <p class="text-xs text-slate-600 mt-1">High-consequence operational decision support.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="rounded-2xl overflow-hidden shadow-xl border border-slate-200">
+                        <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1200&q=80" alt="Energy infrastructure and power grid" class="w-full h-auto object-cover">
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 bg-navy-900 text-white p-6 rounded-xl shadow-xl max-w-xs hidden sm:block border border-slate-800">
+                        <div class="text-teal-400 font-bold text-xl mb-1">Reliability First</div>
+                        <p class="text-xs text-slate-300">Aligning OT security and AI model transparency for critical energy providers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80" alt="Professional consulting team" class="rounded-2xl shadow-lg border border-slate-200 w-full object-cover">
+                </div>
+                <div>
+                    <span class="text-xs font-bold text-teal-700 uppercase tracking-widest mb-3 block">About Vanguard Readiness</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-navy-900 tracking-tight mb-6">
+                        Independent, Rigorous AI Governance Advisors
+                    </h2>
+                    <p class="text-slate-600 text-base leading-relaxed mb-6">
+                        Based in Colorado, Vanguard Readiness LLC is a specialized consulting firm dedicated to helping enterprises navigate the complex intersection of artificial intelligence innovation, risk management, and emerging state and federal regulations.
+                    </p>
+                    <p class="text-slate-600 text-base leading-relaxed mb-8">
+                        We believe that sustainable AI adoption requires robust internal governance, transparent documentation, and leadership accountability. Our advisors combine deep technical literacy with practical risk management frameworks to build governance programs that stand up to regulatory scrutiny.
+                    </p>
+                    
+                    <div class="flex items-center space-x-6">
+                        <div>
+                            <div class="text-3xl font-bold text-navy-900">Colorado</div>
+                            <div class="text-xs text-slate-500 mt-1">Headquartered in Denver</div>
+                        </div>
+                        <div class="h-10 w-px bg-slate-200"></div>
+                        <div>
+                            <div class="text-3xl font-bold text-navy-900">NIST Aligned</div>
+                            <div class="text-xs text-slate-500 mt-1">Standardized frameworks</div>
+                        </div>
+                        <div class="h-10 w-px bg-slate-200"></div>
+                        <div>
+                            <div class="text-3xl font-bold text-navy-900">Independent</div>
+                            <div class="text-xs text-slate-500 mt-1">Vendor-neutral advice</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources & Workshops Section -->
+    <section id="resources" class="py-24 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold text-teal-700 uppercase tracking-widest mb-3 block">Tools & Engagement</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-navy-900 tracking-tight">Readiness Tools & Workshops</h2>
+                <p class="text-slate-600 mt-4 text-base">Get started immediately with our free interactive governance assessment or schedule a consultative discussion.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Tool 1 -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="h-12 w-12 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-list-check"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy-900 mb-3">AI Governance Readiness Check</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            A free 10-question assessment to evaluate whether your organization may benefit from a Colorado ADMT review or NIST AI governance program.
+                        </p>
+                    </div>
+                    <button onclick="openModal('readinessModal')" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 rounded-xl text-sm transition">
+                        Take Readiness Check
+                    </button>
+                </div>
+
+                <!-- Tool 2 -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="h-12 w-12 rounded-xl bg-blue-50 text-royal-600 flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy-900 mb-3">20-Minute Readiness Call</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            A preliminary conversation to understand your AI use, business processes, and assessment needs. Note: does not include detailed document review or legal opinions.
+                        </p>
+                    </div>
+                    <button onclick="openModal('callModal')" class="w-full bg-navy-900 hover:bg-navy-800 text-white font-semibold py-3 rounded-xl text-sm transition">
+                        Schedule Call
+                    </button>
+                </div>
+
+                <!-- Tool 3 -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="h-12 w-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-chalkboard-user"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy-900 mb-3">AI Discovery & Scoping Workshop</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            A structured, paid discovery session for organizations needing a deeper review of algorithms and risk exposure before a formal engagement proposal.
+                        </p>
+                    </div>
+                    <button onclick="openModal('proposalModal')" class="w-full bg-slate-100 hover:bg-slate-200 text-navy-900 font-semibold py-3 rounded-xl text-sm transition border border-slate-300">
+                        Request Workshop
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer Section -->
+    <footer id="contact" class="bg-navy-950 text-slate-300 pt-20 pb-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+                <!-- Col 1: Brand -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="h-10 w-10 rounded-lg bg-teal-600 flex items-center justify-center text-white font-bold text-xl shadow-md">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <div>
+                            <span class="text-xl font-bold tracking-tight text-white block leading-tight">VANGUARD</span>
+                            <span class="text-xs font-semibold tracking-wider text-teal-400 uppercase">Readiness LLC</span>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6 max-w-md">
+                        AI governance, risk, and compliance consulting firm based in Colorado. Helping organizations build defensible AI readiness aligned with Colorado ADMT and the NIST AI Risk Management Framework.
+                    </p>
+                    <div class="text-xs text-slate-500">
+                        &copy; 2026 Vanguard Readiness LLC. All rights reserved. Providing compliance readiness consulting; not legal advice.
+                    </div>
+                </div>
+
+                <!-- Col 2: Navigation -->
+                <div>
+                    <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Navigation</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#home" class="hover:text-teal-400 transition">Home</a></li>
+                        <li><a href="#services" class="hover:text-teal-400 transition">Services</a></li>
+                        <li><a href="#colorado-admt" class="hover:text-teal-400 transition">Colorado ADMT</a></li>
+                        <li><a href="#nist-framework" class="hover:text-teal-400 transition">NIST Framework</a></li>
+                        <li><a href="#energy-infrastructure" class="hover:text-teal-400 transition">Energy & Utilities</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Services -->
+                <div>
+                    <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Solutions</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#services" class="hover:text-teal-400 transition">AI Readiness Assessment</a></li>
+                        <li><a href="#services" class="hover:text-teal-400 transition">Colorado ADMT Readiness</a></li>
+                        <li><a href="#services" class="hover:text-teal-400 transition">AI Governance Program</a></li>
+                        <li><a href="#services" class="hover:text-teal-400 transition">Fractional Advisor</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact info -->
+                <div>
+                    <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Contact</h4>
+                    <ul class="space-y-3 text-sm text-slate-400">
+                        <li><i class="fa-solid fa-location-dot mr-2 text-teal-400"></i> Denver, Colorado</li>
+                        <li><i class="fa-solid fa-envelope mr-2 text-teal-400"></i> contact@vanguardreadiness.com</li>
+                        <li><i class="fa-solid fa-phone mr-2 text-teal-400"></i> (303) 555-0199</li>
+                    </ul>
+                    <div class="mt-6 flex space-x-3">
+                        <button onclick="openModal('callModal')" class="bg-teal-600 hover:bg-teal-500 text-white text-xs font-semibold px-4 py-2.5 rounded-lg transition shadow-sm">
+                            Schedule Call
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL 1: Readiness Check Wizard -->
+    <div id="readinessModal" class="fixed inset-0 z-50 hidden bg-navy-950/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white rounded-2xl max-w-2xl w-full p-6 sm:p-8 relative shadow-2xl my-8">
+            <button onclick="closeModal('readinessModal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-xl p-2">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="quizContainer">
+                <div class="mb-6">
+                    <span class="text-xs font-bold text-teal-700 uppercase tracking-wider">Free Interactive Tool</span>
+                    <h3 class="text-2xl font-bold text-navy-900 mt-1">10-Question AI Governance Readiness Check</h3>
+                    <p class="text-xs text-slate-500 mt-1">Assess your organizational exposure to Colorado ADMT and NIST AI RMF requirements.</p>
+                </div>
+                <!-- Quiz Form Content -->
+                <div id="quizStepContainer">
+                    <!-- Javascript will inject steps here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 2: Schedule Call -->
+    <div id="callModal" class="fixed inset-0 z-50 hidden bg-navy-950/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white rounded-2xl max-w-xl w-full p-6 sm:p-8 relative shadow-2xl my-8">
+            <button onclick="closeModal('callModal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-xl p-2">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="mb-6">
+                <span class="text-xs font-bold text-teal-700 uppercase tracking-wider">No-Obligation Discussion</span>
+                <h3 class="text-2xl font-bold text-navy-900 mt-1">Schedule a Free 20-Minute Readiness Call</h3>
+                <p class="text-xs text-slate-500 mt-1">Discuss your organization's AI use, governance maturity, and potential assessment needs with a specialist.</p>
+            </div>
+            <form onsubmit="handleFormSubmit(event, 'callModal')" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Full Name</label>
+                    <input type="text" required class="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:border-teal-600">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Work Email</label>
+                    <input type="email" required class="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:border-teal-600">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Organization Name</label>
+                    <input type="text" required class="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:border-teal-600">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Primary Area of Interest</label>
+                    <select class="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:border-teal-600 bg-white">
+                        <option>Colorado ADMT Readiness (2027)</option>
+                        <option>NIST AI RMF Implementation</option>
+                        <option>Energy & Critical Infrastructure AI</option>
+                        <option>Fractional AI Governance Advisor</option>
+                        <option>General AI Readiness Assessment</option>
+                    </select>
+                </div>
+                <div class="text-xs text-slate-500 bg-slate-50 p-3 rounded-lg border border-slate-200">
+                    Note: This 20-minute call does not include detailed document review, legal opinions, written findings, or a formal compliance determination.
+                </div>
+                <button type="submit" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 rounded-xl text-sm transition">
+                    Confirm Call Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL 3: Request Proposal -->
+    <div id="proposalModal" class="fixed inset-0 z-50 hidden bg-navy-950/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white rounded-2xl max-w-xl w-full p-6 sm:p-8 relative shadow-2xl my-8">
+            <button onclick="closeModal('proposalModal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-xl p-2">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="mb-6">
+                <span class="text-xs font-bold text-teal-700 uppercase tracking-wider">Engagement Inquiry</span>
+                <h3 class="text-2xl font-bold text-navy-900 mt-1">Request a Consulting Proposal</h3>
+                <p class="text-xs text-slate-500 mt-1">Tell us about your organization to receive a customized scope and proposal.</p>
+            </div>
+            <form onsubmit="handleFormSubmit(event, 'proposalModal')" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Full Name</label>
+                    <input type="text" required class="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:border-teal-600">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Work Email</label>
+                    <input type="email" required class="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:border-teal-600">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Organization Name & Size</label>
+                    <input type="text" required class="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:border-teal-600" placeholder="e.g., Acme Energy (250 employees)">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Select Service Package</label>
+                    <select class="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:border-teal-600 bg-white">
+                        <option>1. AI Readiness Assessment</option>
+                        <option>2. AI Governance & Colorado Readiness</option>
+                        <option>3. AI Governance Program Implementation</option>
+                        <option>Fractional AI Governance Advisor Retainer</option>
+                        <option>Paid AI Discovery & Scoping Workshop</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Briefly describe your AI systems or objectives</label>
+                    <textarea rows="3" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:border-teal-600" placeholder="Mention any automated decision-making or critical infrastructure use cases..."></textarea>
+                </div>
+                <button type="submit" class="w-full bg-navy-900 hover:bg-navy-800 text-white font-semibold py-3 rounded-xl text-sm transition">
+                    Submit Proposal Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript for Mobile Menu, Modals & Quiz Wizard -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // Modal Controls
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            if(modalId === 'readinessModal') {
+                initQuiz();
+            }
+        }
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close on outside click
+        window.onclick = function(event) {
+            ['readinessModal', 'callModal', 'proposalModal'].forEach(id => {
+                const modal = document.getElementById(id);
+                if (event.target === modal) {
+                    closeModal(id);
+                }
+            });
+        }
+
+        // Form Submissions Mock
+        function handleFormSubmit(e, modalId) {
+            e.preventDefault();
+            alert('Thank you! Your request has been securely submitted to Vanguard Readiness LLC. An advisor will contact you shortly.');
+            closeModal(modalId);
+        }
+
+        // 10-Question Readiness Check Quiz Engine
+        const quizQuestions = [
+            "1. Does your organization currently deploy or procure artificial intelligence or automated tools that impact consumer access to employment, housing, financial credit, insurance, or education?",
+            "2. Do you operate in Colorado or provide automated decision-making technology (ADMT) services to Colorado residents?",
+            "3. Have you established a centralized inventory or register of all active AI and automated decision systems across business units?",
+            "4. Does your leadership team receive documented risk reports regarding algorithm bias, data provenance, or model drift?",
+            "5. Do you maintain formal human oversight and appeal workflows for consequential algorithmic decisions?",
+            "6. Have you conducted a structured gap assessment aligned with the NIST AI Risk Management Framework (GOVERN, MAP, MEASURE, MANAGE)?",
+            "7. Do you perform formal vendor AI due diligence before integrating third-party models or algorithms?",
+            "8. Does your organization operate in energy, utilities, pipelines, or critical infrastructure utilizing operational AI or SCADA analytics?",
+            "9. Are roles, responsibilities, and accountability for AI governance formally assigned to specific executive or compliance owners?",
+            "10. Are you prepared to document governance controls and impact assessments prior to Colorado's January 1, 2027 ADMT mandates?"
+        ];
+
+        let currentQuizStep = 0;
+        let quizAnswers = [];
+
+        function initQuiz() {
+            currentQuizStep = 0;
+            quizAnswers = [];
+            renderQuizStep();
+        }
+
+        function renderQuizStep() {
+            const container = document.getElementById('quizStepContainer');
+            if (currentQuizStep < quizQuestions.length) {
+                container.innerHTML = `
+                    <div class="mb-4 flex justify-between items-center text-xs font-semibold text-slate-500 uppercase">
+                        <span>Question ${currentQuizStep + 1} of ${quizQuestions.length}</span>
+                        <span>${Math.round(((currentQuizStep) / quizQuestions.length) * 100)}% Complete</span>
+                    </div>
+                    <div class="w-full bg-slate-200 h-1.5 rounded-full mb-6">
+                        <div class="bg-teal-600 h-1.5 rounded-full transition-all duration-300" style="width: ${((currentQuizStep) / quizQuestions.length) * 100}%"></div>
+                    </div>
+                    <h4 class="text-base font-bold text-navy-900 mb-6 leading-snug">${quizQuestions[currentQuizStep]}</h4>
+                    <div class="space-y-3">
+                        <button onclick="answerQuiz(true)" class="w-full text-left p-4 rounded-xl border border-slate-200 hover:border-teal-600 hover:bg-teal-50/50 font-medium text-sm text-navy-900 transition flex items-center justify-between">
+                            <span>Yes / Partially</span>
+                            <i class="fa-solid fa-arrow-right text-teal-600"></i>
+                        </button>
+                        <button onclick="answerQuiz(false)" class="w-full text-left p-4 rounded-xl border border-slate-200 hover:border-teal-600 hover:bg-teal-50/50 font-medium text-sm text-navy-900 transition flex items-center justify-between">
+                            <span>No / Unsure</span>
+                            <i class="fa-solid fa-arrow-right text-slate-400"></i>
+                        </button>
+                    </div>
+                `;
+            } else {
+                // Calculate Results
+                const yesCount = quizAnswers.filter(a => a === true).length;
+                let recommendation = "";
+                let badgeColor = "";
+
+                if (yesCount <= 3) {
+                    recommendation = "Your organization shows significant exposure across multiple governance areas. We strongly recommend scheduling an AI Readiness Assessment and a Colorado ADMT applicability review as soon as possible.";
+                    badgeColor = "bg-red-50 text-red-700 border-red-200";
+                } else if (yesCount <= 7) {
+                    recommendation = "You have established baseline awareness or initial controls, but key gaps remain regarding formal NIST AI RMF implementation and 2027 Colorado ADMT readiness documentation.";
+                    badgeColor = "bg-amber-50 text-amber-700 border-amber-200";
+                } else {
+                    recommendation = "Your organization demonstrates advanced governance maturity. You are well-positioned for continuous monitoring, recurring fractional advisory oversight, and final compliance audit preparation.";
+                    badgeColor = "bg-teal-50 text-teal-700 border-teal-200";
+                }
+
+                container.innerHTML = `
+                    <div class="text-center py-4">
+                        <div class="h-16 w-16 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center text-2xl mx-auto mb-4">
+                            <i class="fa-solid fa-clipboard-check"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold text-navy-900 mb-2">Readiness Check Complete</h4>
+                        <p class="text-xs text-slate-500 mb-6">You answered "Yes" to ${yesCount} out of ${quizQuestions.length} evaluation indicators.</p>
+                        
+                        <div class="p-4 rounded-xl border text-sm text-left mb-6 leading-relaxed ${badgeColor}">
+                            <strong>Assessment Summary:</strong> ${recommendation}
+                        </div>
+
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs text-slate-500 mb-6 text-left">
+                            <strong>Disclaimer:</strong> This interactive questionnaire is a preliminary self-assessment tool. It does not constitute a legal determination, compliance certification, or formal audit finding.
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <button onclick="closeModal('readinessModal'); openModal('callModal');" class="flex-1 bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 rounded-xl text-sm transition">
+                                Discuss Results in a Free Call
+                            </button>
+                            <button onclick="initQuiz()" class="px-4 py-3 bg-slate-100 hover:bg-slate-200 text-navy-900 font-semibold rounded-xl text-sm transition">
+                                Retake Quiz
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        function answerQuiz(val) {
+            quizAnswers.push(val);
+            currentQuizStep++;
+            renderQuizStep();
+        }
+    </script>
+</body>
+</html>
